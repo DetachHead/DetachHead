@@ -1,4 +1,4 @@
-  <img src="https://img.shields.io/badge/Html-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-ff7851" /> 
+  <p><img src="https://img.shields.io/badge/Html-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-ff7851" /> 
   <img src="https://img.shields.io/badge/CSS-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-44b2fb" /> 
   <img src="https://img.shields.io/badge/SCSS-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-3fedff" />  
   <img src="https://img.shields.io/badge/javascript-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%86-f99f03" /> 
@@ -459,3 +459,4 @@
    <img src="https://img.shields.io/badge/AdobeIllustrator-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%86-fe7b05" /> 
    <img src="https://img.shields.io/badge/Sketch-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%86-fdad00" /> 
    <img src="https://img.shields.io/badge/Invision-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%86-f8517c" /> 
+<p>
