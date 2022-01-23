@@ -1,30 +1,9 @@
-import {
-  Application,
-  buildUrl,
-  Router,
-  throwIfUndefined,
-  toNumber,
-} from "./deps.ts";
+import { Application, buildUrl, Router } from "./deps.ts";
 
 const app = new Application();
 
-const countFile = "count.txt";
-let viewCount: number;
-try {
-  viewCount = throwIfUndefined(toNumber(await Deno.readTextFile(countFile)));
-  console.log(`loaded viewcount: ${viewCount}`);
-} catch (_e) {
-  viewCount = 0;
-  console.log(`reset viewcount to ${viewCount}`);
-}
-
-Deno.addSignalListener("SIGINT", async () => {
-  await Deno.writeTextFile(countFile, viewCount.toString());
-  console.log(
-    `interrupted, updated ${countFile} with current view count: ${viewCount}`,
-  );
-  Deno.exit();
-});
+//TODO: store this in some sort of persistent storage
+let viewCount = 0;
 
 const router = new Router();
 
