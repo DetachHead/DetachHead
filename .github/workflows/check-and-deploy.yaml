@@ -1,0 +1,32 @@
+name: check-and-deploy
+on:
+  - push
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: ${{ env.DENO_VERSION }}
+      - run: deno lint
+      - run: deno fmt --check
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    name: deploy
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - name: Create SSH key
+        run: |
+          mkdir -p ~/.ssh/
+          cd ~/.ssh/
+          echo "${{secrets.SSH_PRIVATE_KEY}}" > ./id_rsa
+          sudo chmod 600 ./id_rsa
+        shell: bash
+      - name: deploy
+        run: >
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -o StrictHostKeyChecking=no
+          "cd detachhead && git pull
+          && docker build -t detachhead .
+          && docker run -d -p 8000 detachhead"
