@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Deno: main.ts" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/src/main.ts" programParameters="run --unstable --allow-net --allow-run --allow-env --allow-write --allow-read">
+    <method v="2" />
+  </configuration>
+</component>

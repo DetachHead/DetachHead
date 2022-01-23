@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="project" pattern="file:*.json||file:*.ts||file:*.md" />
+</component>
