@@ -30,5 +30,7 @@ jobs:
           "cd detachhead
           && git fetch
           && git checkout -B master origin/master
+          && (docker stop detachhead || true)
+          && (docker rm detachhead || true)
           && docker build -t detachhead .
-          && docker run -d -p 8000:8000 detachhead"
+          && docker run -d --name detachhead -p 8000:8000 detachhead"
