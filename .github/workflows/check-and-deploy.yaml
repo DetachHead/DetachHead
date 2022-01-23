@@ -31,4 +31,4 @@ jobs:
           && git fetch
           && git checkout -B master origin/master
           && docker build -t detachhead .
-          && docker run -d -p 8000 detachhead"
+          && docker run -d -p 8000:8000 detachhead"
