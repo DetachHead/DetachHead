@@ -27,6 +27,8 @@ jobs:
       - name: deploy
         run: >
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -o StrictHostKeyChecking=no
-          "cd detachhead && git pull
+          "cd detachhead
+          && git fetch
+          && git checkout -B master origin/master
           && docker build -t detachhead .
           && docker run -d -p 8000 detachhead"
