@@ -41,7 +41,8 @@ router.get("/", async (ctx) => {
     ],
     queryParams: {
       //cringe, the api docs don't show how to post the image and i cbf figuring out how to host the image with oak
-      alt: "https://github.com/DetachHead/detachhead/blob/master/funny.png",
+      alt:
+        "https://raw.githubusercontent.com/DetachHead/detachhead/master/funny.png",
     },
   });
   ctx.response.body = (await fetch(url)).body;
