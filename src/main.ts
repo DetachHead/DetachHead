@@ -46,6 +46,10 @@ router.get("/", async (ctx) => {
     },
   });
   ctx.response.body = (await fetch(url)).body;
+  ctx.response.headers.set(
+    "Cache-Control",
+    "max-age=0, no-cache, no-store, must-revalidate",
+  );
 });
 
 app.use(router.routes());
