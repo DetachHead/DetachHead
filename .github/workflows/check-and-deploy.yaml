@@ -11,6 +11,7 @@ jobs:
           deno-version: ${{ env.DENO_VERSION }}
       - run: deno lint
       - run: deno fmt --check
+      - run: deno cache src/main.ts
   deploy:
     if: github.ref == 'refs/heads/master'
     name: deploy
